@@ -10,6 +10,14 @@ describe 'LOOPS' do
       expect { countdown(10) }.to output(countdown_output).to_stdout
     end
 
+    def countdown(seconds_to_midnight)
+      while seconds_to_midnight > 0
+        puts "#{seconds_to_midnight} SECOND(S)!"
+        seconds_to_midnight -= 1
+      end
+      "HAPPY NEW YEAR!"
+    end
+
     it 'returns HAPPY NEW YEAR!' do
       expect(countdown(12)).to eq "HAPPY NEW YEAR!"
     end
@@ -22,4 +30,14 @@ describe 'LOOPS' do
     end
   end
 
+  def countdown_with_sleep(seconds_to_midnight)
+    while seconds_to_midnight > 0
+      puts "#{seconds_to_midnight} SECOND(S)!"
+      sleep(1)
+      seconds_to_midnight
+    end
+    "HAPPY NEW YEAR!"
+  end
+
 end
+
